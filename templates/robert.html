@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Henderson</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/robert.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Robert Henderson</h1>
+        <h2>HOUSE WE ARE CURRENTLY IN THE MARKET FOR</h2>
+    </header>
+    <div class="property-details">
+        <h2>Property Details</h2>
+        <ul>
+            <li><strong>Bedrooms:</strong> 8 Bedrooms (or more)</li>
+            <li><strong>Baths:</strong> 6 Baths and more toilets</li>
+            <li><strong>Garage:</strong> 5/6 Garage Bay</li>
+        </ul>
+        <div class="property-features">
+            <h2>Property Features</h2>
+            <ul>
+                <li>Spacious living areas with high ceilings</li>
+                <li>Gourmet kitchen with modern appliances</li>
+                <li>Private master suite with en-suite bathroom</li>
+                <li>Resort-style backyard with pool and outdoor kitchen</li>
+            </ul>
+        </div>
+    </div>
+    <div class="images">
+        <img src="{{ url_for('static', filename='image/fine1.jpeg') }}" alt="Property Image 1">
+        <img src="{{ url_for('static', filename='image/fine2.jpeg') }}" alt="Property Image 2">
+        <img src="{{ url_for('static', filename='image/fine3.jpeg') }}" alt="Property Image 3">
+    </div>
+    <div class="call-to-action">
+        <button>Contact Us to Schedule a Viewing</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../image/home.jpg'); /* Replace with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+header {
+    margin-top: 100px; /* To prevent header content from being covered by the navbar */
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.email-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for buttons */
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 0 20px;
+}
+
+.email-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.email-btn img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.yahoo-btn {
+    background-color: #430297;
+    color: white;
+}
+
+.outlook-btn {
+    background-color: #0078d4;
+    color: white;
+}
+
+.aol-btn {
+    background-color: #ff6200;
+    color: white;
+}
+
+.gmx-btn {
+    background-color: #1d9a8c;
+    color: white;
+}
+
+/* Transparent Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+    color: white;
+    padding: 15px 0;
+    z-index: 1000; /* Ensure the navbar stays on top */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    color: #3498db; /* Add hover color for navbar links */
+}
+
+footer {
+    margin-top: 40px;
+    color: #777;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

